@@ -9,7 +9,7 @@ MaterialPropertyBlock is used by Graphics. RenderMesh and Renderer. SetPropertyB
 ## Package Overview
 This project allows you to easily and quickly add a Material Property Block feature to your game object.
 
-![Basic Wobbly TMP Video](https://github.com/safakgulpinar/BasicMaterialPropertyBlock/assets/90358778/8cce32b1-c6f0-427b-8255-a59ba942f019)
+![Basic Material Property Block Video](https://github.com/safakgulpinar/BasicMaterialPropertyBlock/assets/90358778/8cce32b1-c6f0-427b-8255-a59ba942f019)
 
 
 

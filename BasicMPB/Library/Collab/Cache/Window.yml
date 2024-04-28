@@ -102,24 +102,6 @@ MonoBehaviour:
     - Assets/_BasicMPB/Scripts/Enemy.cs.meta
     - Assets/_BasicMPB/Scripts/MPBController.cs
     - Assets/_BasicMPB/Scripts/MPBController.cs.meta
-    - Assets/_FrustumVisibilitySystem.meta
-    - Assets/_FrustumVisibilitySystem/Materials.meta
-    - Assets/_FrustumVisibilitySystem/Materials/Ground.mat
-    - Assets/_FrustumVisibilitySystem/Materials/Ground.mat.meta
-    - Assets/_FrustumVisibilitySystem/Materials/Player.mat
-    - Assets/_FrustumVisibilitySystem/Materials/Player.mat.meta
-    - Assets/_FrustumVisibilitySystem/Materials/Tree.mat
-    - Assets/_FrustumVisibilitySystem/Materials/Tree.mat.meta
-    - Assets/_FrustumVisibilitySystem/Scene.meta
-    - Assets/_FrustumVisibilitySystem/Scene/DemoScene.unity
-    - Assets/_FrustumVisibilitySystem/Scene/DemoScene.unity.meta
-    - Assets/_FrustumVisibilitySystem/Scripts.meta
-    - Assets/_FrustumVisibilitySystem/Scripts/FrustumVisibilityManager.cs
-    - Assets/_FrustumVisibilitySystem/Scripts/FrustumVisibilityManager.cs.meta
-    - Assets/_FrustumVisibilitySystem/Scripts/Player.cs
-    - Assets/_FrustumVisibilitySystem/Scripts/Player.cs.meta
-    - Assets/_FrustumVisibilitySystem/Scripts/VisibilitySubject.cs
-    - Assets/_FrustumVisibilitySystem/Scripts/VisibilitySubject.cs.meta
     - Packages/manifest.json
     - Packages/packages-lock.json
     - ProjectSettings/AudioManager.asset
@@ -142,7 +124,7 @@ MonoBehaviour:
     - ProjectSettings/VFXManager.asset
     - ProjectSettings/VersionControlSettings.asset
     - 
-    m_Values: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    m_Values: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 

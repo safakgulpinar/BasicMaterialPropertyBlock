@@ -7,8 +7,10 @@ namespace _BasicMPB.Scripts
     {
         private Renderer _renderer = null;
         private MaterialPropertyBlock _materialPropertyBlock = null;
-        private bool isAnimating = false;
-        private Color originalColor;
+        private bool _isAnimating = false;
+        private Color _originalColor;
+        private IEnumerator _animateColorCoroutine;
+        private IEnumerator _colorPulseCoroutine;
         
         //This is the ID of the color property in the shader
         private static readonly int Color1 = Shader.PropertyToID("_Color");
@@ -18,12 +20,12 @@ namespace _BasicMPB.Scripts
             _renderer = GetComponent<Renderer>();
             _materialPropertyBlock = new MaterialPropertyBlock();
             //Or sharedMaterial if you want to change the color of the material directly
-            originalColor = _materialPropertyBlock.GetColor(Color1);
+            _originalColor = _materialPropertyBlock.GetColor(Color1);
         }
 
         private void OnDisable()
         {
-            if (!isAnimating) return;
+            if (!_isAnimating) return;
             StopAllCoroutines();
             ResetColor();
         }
@@ -38,22 +40,30 @@ namespace _BasicMPB.Scripts
         //Use this method is used to animate the color of the material
         public void AnimateColor(Color targetColor, float duration)
         {
-            if (!isAnimating)
+            if (_isAnimating) return;
+            
+            if(_animateColorCoroutine != null)
             {
-                StartCoroutine(AnimateColorCoroutine(targetColor, duration));
+                StopCoroutine(_animateColorCoroutine);
+                _animateColorCoroutine = null;
             }
+            StartCoroutine(_animateColorCoroutine = AnimateColorCoroutine(targetColor, duration));
         }
         public void StartColorPulse(Color colorA, Color colorB, float cycleDuration, int loops)
         {
-            if (!isAnimating)
+            if (_isAnimating) return;
+            
+            if(_colorPulseCoroutine != null)
             {
-                StartCoroutine(ColorPulseCoroutine(colorA, colorB, cycleDuration, loops));
+                StopCoroutine(_colorPulseCoroutine);
+                _colorPulseCoroutine = null;
             }
+            StartCoroutine(_colorPulseCoroutine = ColorPulseCoroutine(colorA, colorB, cycleDuration, loops));
         }
         
         private IEnumerator AnimateColorCoroutine(Color targetColor, float duration)
         {
-            isAnimating = true;
+            _isAnimating = true;
             var initialColor = _materialPropertyBlock.GetColor(Color1);
             var timer = 0.0f;
 
@@ -68,12 +78,12 @@ namespace _BasicMPB.Scripts
             }
 
             SetColor(targetColor);
-            isAnimating = false;
+            _isAnimating = false;
         }
         
         private IEnumerator ColorPulseCoroutine(Color colorA, Color colorB, float cycleDuration, int loops)
         {
-            isAnimating = true;
+            _isAnimating = true;
             var currentLoop = 0;
 
             while (currentLoop < loops)
@@ -84,7 +94,7 @@ namespace _BasicMPB.Scripts
             }
 
             SetColor(colorA); // Ensure final color is reset to original
-            isAnimating = false;
+            _isAnimating = false;
         }
 
         private IEnumerator ColorTransition(Color startColor, Color endColor, float duration)
@@ -103,7 +113,7 @@ namespace _BasicMPB.Scripts
         
         private void ResetColor()
         {
-            SetColor(originalColor);
+            SetColor(_originalColor);
         }
     }
 }

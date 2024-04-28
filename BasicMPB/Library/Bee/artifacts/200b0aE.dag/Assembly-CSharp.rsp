@@ -356,6 +356,9 @@
 -r:"Library/Bee/artifacts/200b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/_BasicMPB/Scripts/Enemy.cs"
 "Assets/_BasicMPB/Scripts/MPBController.cs"
+"Assets/_FrustumVisibilitySystem/Scripts/FrustumVisibilityManager.cs"
+"Assets/_FrustumVisibilitySystem/Scripts/Player.cs"
+"Assets/_FrustumVisibilitySystem/Scripts/VisibilitySubject.cs"
 -langversion:9.0
 
 /deterministic
